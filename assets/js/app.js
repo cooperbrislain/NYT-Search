@@ -18,7 +18,7 @@ $(document).ready(function() {
             results.forEach(result => {
                 console.log(result);
                 $resultDOM = $('<div class="result">');
-                $resultDOM.append($('<h1>').text(result.headline.name));
+                $resultDOM.append($('<h1>').text(result.headline.main));
                 $resultDOM.appendTo('body');
             });
         });
