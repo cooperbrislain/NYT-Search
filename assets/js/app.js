@@ -8,10 +8,22 @@ $(document).ready(function() {
         let num_records = $('.numRecords').val();
         let year_start = $('.startYear').val();
         let year_end = $('.endYear').val();
-        let $url  = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search_term}&api-key=${api_key}`
+        let query_url  = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${search_term}&api-key=${api_key}`
+        $.ajax({
+            url: query_url,
+            method: 'GET'
+        })
+        .then (response => {
+            let results = response.response.docs;
+            results.forEach(result => {
+                $resultDOM = $('<div class="result">');
+                $resultDOM.append('<h1>').text(result.headline.name);
+                $resultDOM.appendTo('body');
+            });
+        });
     });
 
     $(document).on('click', 'button.clearResults', (e) => {
-        
+
     });
 });
