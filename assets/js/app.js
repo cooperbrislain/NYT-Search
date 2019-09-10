@@ -16,14 +16,15 @@ $(document).ready(function() {
         .then (response => {
             let results = response.response.docs;
             results.forEach(result => {
+                console.log(result);
                 $resultDOM = $('<div class="result">');
-                $resultDOM.append('<h1>').text(result.headline.name);
+                $resultDOM.append($('<h1>').text(result.headline.name));
                 $resultDOM.appendTo('body');
             });
         });
     });
 
     $(document).on('click', 'button.clearResults', (e) => {
-
+        $('input[type="text"]').val('');
     });
 });
