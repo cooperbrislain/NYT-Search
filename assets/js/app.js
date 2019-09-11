@@ -7,7 +7,11 @@ let page = 0;
 let changed = false;
 
 function initialize() {
-    earth = new WE.map('globe');
+    earth = new WE.map('globe', {
+        zoom: 2.8,
+        dragging: true,
+        scrollWheelZoom: true
+    });
     WE.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
         attribution: '© OpenStreetMap contributors'
     }).addTo(earth);
