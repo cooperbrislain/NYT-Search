@@ -41,7 +41,7 @@ $(document).ready(function() {
                         let location = response.results[0].geometry.location;
                         console.log(location);
                         let marker = WE.marker([location.lat, location.lng]).addTo(earth);
-                        marker.bindPopup(`${result.headline.main}`, {maxWidth: 150}).openPopup();
+                        marker.bindPopup(`<a href="${result.web_url}" target="_blank">${result.headline.main}</a>`, {maxWidth: 150}).openPopup();
                     });
                 }
             });
