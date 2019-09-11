@@ -20,12 +20,21 @@
             <h1 class="display- text-center text-light">New York Times Global News Search</h1>
         </header>
         <form class="p-3">
-            <div class="form-group">
-                <input class="form-control" id="searchTerm" type="text">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button type="button" id="inputGroupPrepend" class="btn btn-primary btn-search">Search</button>
+                </div>
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-secondary btn-more">More</button>
+                </div>
+                <input type="text" class="form-control" id="searchTerm" placeholder="Search articles to see them on the globe." aria-describedby="inputGroupPrepend">
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-primary btn-clear">Clear</button>
+                </div>
             </div>
-            <button type="button" class="btn btn-primary btn-search">Search</button>
-            <button type="button" class="btn btn-primary btn-more">More</button>
-            <button type="button" class="btn btn-primary btn-clear">Clear Results</button>
+            
+            
+            
         </form> 
         <div class="container p-3" id="topArticles">
             <div id="globe"></div>
