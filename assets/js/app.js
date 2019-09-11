@@ -69,8 +69,10 @@ $(document).ready(function() {
 
     $(document).on('click', 'button.btn-clear', (e) => {
         e.preventDefault();
+        $('#globe>div').remove();
         $('.btn-more').collapse('hide');
         $('input[type="text"]').val('');
+
     });
 
     $(document).on('change','input#searchTerm', (e) => {
