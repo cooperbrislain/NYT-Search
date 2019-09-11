@@ -4,6 +4,7 @@ const api_key = '7rD2m8tjA4uLzOF2ZYyYbx8MGkD0Ymfg';
 const google_geocode_api_key = 'AIzaSyAz7eNW1XE8Mb4PQfvetmdAUkOnk9O5qzg';
 let earth; 
 let page = 0;
+let changed = false;
 
 function initialize() {
     earth = new WE.map('globe');
@@ -67,5 +68,22 @@ $(document).ready(function() {
     $(document).on('click', 'button.btn-clear', (e) => {
         e.preventDefault();
         $('input[type="text"]').val('');
+    });
+
+    $('input#searchTerm').on('change', (e) => {
+        changed = true;
+    });
+
+    $('input#searchTerm').on('keypress', (e) => {
+        if (e.which == 13) {
+            e.preventDefault();
+            if (changed) {
+                page = 1;
+                loadStories();
+            } else {
+                page++;
+                loadStories();
+            }
+        }
     });
 });
