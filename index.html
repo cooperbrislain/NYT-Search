@@ -14,25 +14,21 @@
     <title>NYT Global News Search</title>
 </head>
 <body>
-    <div class="container" id="searchParameters">
-            <div id="globe"></div>
-        <form class="p-3">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <button type="button" id="inputGroupPrepend" class="btn btn-primary btn-search"><i class="fas fa-search"></i></button>
-                </div>
-                <div class="input-group-prepend">
-                    <button type="button" class="btn btn-secondary btn-more collapse"><i class="fas fa-search-plus"></i></button>
-                </div>
-                <input type="text" class="form-control" id="searchTerm" placeholder="Search articles to see them on the globe." aria-describedby="inputGroupPrepend">
-                <div class="input-group-prepend">
-                    <button type="button" class="btn btn-primary btn-clear"><i class="far fa-times-circle"></i></button>
-                </div>
+    <div id="globe"></div>    
+    <form class="p-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <button type="button" id="inputGroupPrepend" class="btn btn-primary btn-search"><i class="fas fa-search"></i></button>
             </div>
-        </form>
-    </div>
-    <div class="container mt-2">
-    </div>
+            <div class="input-group-prepend">
+                <button type="button" class="btn btn-secondary btn-more collapse"><i class="fas fa-search-plus"></i></button>
+            </div>
+            <input type="text" class="form-control" id="searchTerm" placeholder="Search articles to see them on the globe." aria-describedby="inputGroupPrepend">
+            <div class="input-group-prepend">
+                <button type="button" class="btn btn-primary btn-clear"><i class="far fa-times-circle"></i></button>
+            </div>
+        </div>
+    </form>
     <!-- jQuery & javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
