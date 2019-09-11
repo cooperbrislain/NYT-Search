@@ -30,6 +30,8 @@ function loadStories() {
     })
     .then (response => {
         let results = response.response.docs;
+        changed = false;
+        $('.btn-more').collapse('show');
         results.forEach(result => {
             let wheres = result.keywords.filter(ob => {
                 return ob.name === 'glocations';
@@ -67,14 +69,17 @@ $(document).ready(function() {
 
     $(document).on('click', 'button.btn-clear', (e) => {
         e.preventDefault();
+        $('.btn-more').collapse('hide');
         $('input[type="text"]').val('');
     });
 
-    $('input#searchTerm').on('change', (e) => {
+    $(document).on('change','input#searchTerm', (e) => {
+        console.log('change');
+        $('.btn-more').collapse('hide');
         changed = true;
     });
 
-    $('input#searchTerm').on('keypress', (e) => {
+    $(document).on('keypress','input#searchTerm', (e) => {
         if (e.which == 13) {
             e.preventDefault();
             if (changed) {
