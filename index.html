@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
 <link rel="stylesheet" href="./assets/css/style.css">
+<style>
+  html, body{padding: 0; margin: 0;}
+  #earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+</style>
 <title>Title</title>
 </head>
 <body>
@@ -43,14 +47,16 @@
 </div>
 
 <div class="container mt-2">
-  <header class="pt-1 pb-1 pl-3 bg-light font-weight-bold border">Top Articles</header>
-  <div class="container p-3 border" id="topArticles"></div>
+  <header class="pt-1 pb-1 pl-3 bg-light font-weight-bold border">Article Locations</header>
+  <div class="container p-3 border" id="topArticles">
+    <div id="globe"></div>
+  </div>
 </div>
-
 <!-- jQuery & javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://www.webglearth.com/v2/api.js"></script>
 <script src="./assets/js/app.js"></script>
 </body>
 </html>
