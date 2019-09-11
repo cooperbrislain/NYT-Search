@@ -6,7 +6,7 @@ let earth;
 
 function initialize() {
     earth = new WE.map('globe');
-    WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    WE.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
         attribution: '© OpenStreetMap contributors'
     }).addTo(earth);
 }
