@@ -10,6 +10,14 @@ function initialize() {
     WE.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
         attribution: '© OpenStreetMap contributors'
     }).addTo(earth);
+    var before = null;
+    requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        var elapsed = before? now - before: 0;
+        before = now;
+        earth.setCenter([c[0], c[1] + 0.1*(elapsed/30)]);
+        requestAnimationFrame(animate);
+    });
 }
 
 function loadStories() {
